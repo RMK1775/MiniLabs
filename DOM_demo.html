@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JavaScript Example</title>
+</head>
+<body bgcolor="#faebd7">
+<h1>This is a demo page</h1>
+<p>They don't have</p>
+<p>To say anything</p>
+<p>Very special.</p>
+<h1 id="out"></h1>
+<p id="demo"></p>
+<p id="demoText"></p>
+<p id="p1">To be or not to be?</p>
+<p id="p2" data-playname="Hamlet">That is the question.</p>
+
+<script>
+    "use strict";
+    (function() {
+        var listItems = document.getElementsByTagName('p');
+        // Print all the list items
+        let output = ''
+        for (var i = 0; i < listItems.length; i++) {
+            output += listItems[i].innerHTML + '<br>'
+            // console.log(listItems[i].innerHTML);
+        }
+        let hout = document.getElementById('out')
+        hout.innerHTML = output
+    })();
+    let demoParagraph = document.getElementById('demo');
+    demoParagraph.innerHTML = "<b>Hello Io!</b>"
+    let demoTextParagraph = document.getElementById('demoText');
+    demoTextParagraph.innerText = "<b>Hello Io!</b>"
+    (function() {
+        // Change the style of p1 to 'font-size: 4rem'
+        let p1 = document.getElementById('p1');
+        p1.setAttribute('style', 'font-size: 4rem')
+        // Get the data-* attribute from p2
+        let dataAttribute = p2.getAttribute('data-playname')
+        // Print the data-* attribute on the console log.
+        console.log(dataAttribute)
+    })();
+</script>
+</body>
+</html>
+
+<!--createElement(): https://developer.mozilla.org/en-US/docs/Web/API/document.createElement-->
+<!--removeChild(): https://developer.mozilla.org/en-US/docs/Web/API/Node.removeChild-->
+<!--appendChild(): https://developer.mozilla.org/en-US/docs/Web/API/Node.appendChild-->
+<!--replaceChild(): https://developer.mozilla.org/en-US/docs/Web/API/Node.replaceChild-->
