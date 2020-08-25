@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JavaScript Example</title>
+</head>
+<body >
+<h1>This is a demo page</h1>
+<p>They don't have</p>
+<p>To say anything</p>
+<p>Very special.</p>
+<h1 id="out"></h1>
+<script>
+    "use strict";
+    (function() {
+        var listItems = document.getElementsByTagName('p');
+        // Print all the list items
+        let output = ''
+        for (var i = 0; i < listItems.length; i++) {
+            output += listItems[i].innerHTML + '<br>'
+            // console.log(listItems[i].innerHTML);
+        }
+        let hout = document.getElementById('out')
+        hout.innerHTML = output
+    })();
+</script>
+</body>
+</html>

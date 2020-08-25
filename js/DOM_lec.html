@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Lec</title>
+</head>
+<body>
+<h1 class="a" id="demo"></h1>
+<h2 class="b">DOM lecture</h2>
+<h3 class="a">On deck</h3>
+<h3 class="b">Last one</h3>
+<p>One</p>
+<p>Two</p>
+<p>Three</p>
+<script>
+    "use strict";
+    (function (){
+        var paragraph = document.getElementById('demo');
+        paragraph.innerHTML = 'Io Rocks!';
+    })();
+    var bParagraphs = document.getElementsByClassName('b');
+    for(let i = 0; i < bParagraphs.length; i++){
+        console.log(bParagraphs[i]);
+    }
+    var grabParagraphs = document.getElementsByTagName('p');
+    for(let j = 0; j < grabParagraphs.length; j++){
+        console.log(grabParagraphs[j])
+    }
+</script>
+</body>
+</html>
