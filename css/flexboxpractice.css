@@ -1,0 +1,46 @@
+body {
+    background-color: lightgrey;
+}
+.container{
+    width: 100%;
+    height: 40px;
+    border: 1px solid goldenrod;
+    display:flex;
+<!--
+    One way to center using flex
+    justify-content: center;
+    align-items: center;
+-->
+}
+.box{
+    background-color: #77AF00;
+    color: white;
+    /* Another way to center using margin */
+    margin: 0 auto;
+}
+.box3{
+
+    margin-right: auto;
+}
+nav{
+    background: black;
+}
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+nav a{
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-family: Verdana;
+    padding: .3em .5em;
+}
+nav a:hover{
+    background: black;
+}
+#about{
+    margin-left: auto;
+}
