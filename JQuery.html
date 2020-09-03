@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Example Page</h1>
+<div class="important">
+    <h3>NOTICE</h3>
+    <p>This is an important message!</p>
+</div>
+<div class="not-important">
+    <h2>Lorem Ipsum</h2>
+    <p>
+        Lorem ipsum dolor sit amet, incididunt ut <span class="important">labore et dolore magna aliqua.</span>, quis ut aliquip ex ea commodo.
+    </p>
+</div>
+<p class="important">This is also very important.</p>
+<!--Let the JAVA begin-->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script>
+    //  IIFE: protect the variables from global scope
+    (function(){
+        //No wishy-washy
+        "use strict";
+        //Launches the code within once the page loads
+        $().ready(function(){
+            //----Selector Examples
+            //--Class selected
+            $('.important').css('background-color', '#ff0');
+            $('.not-important').css('background-color', "green");
+            //--Element selected
+            $('p').css('font-size', '25px');
+            $('h3').css('color', 'red');
+            //--Multiple selections
+            //-All important class and all paragraphs
+            $('.important, p').css('background-color', '#ff0000');
+            //-h1 nad h2 elements selected
+            $('h1, h2').css('background-color', 'blue');
+            //--Child Selector
+            //-important class child of paragraph
+            $('p > .important').css('background-color', 'grey');
+            //--All selected
+            //-Dashed border around all elements
+            $('*').css('border', '1px dashed orange');
+        })
+    })();
+</script>
+</body>
+</html>
