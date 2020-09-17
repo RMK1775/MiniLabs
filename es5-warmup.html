@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>es5 warmup</title>
+</head>
+<body>
+<main>
+    <div>bob</div>
+    <div>STEVE</div>
+    <div>sAlLY</div>
+    <script>
+        let name = {lName: "smith"};
+
+        const divNames = document.querySelectorAll('div');
+        console.log(divNames)
+
+        for (const divName of divNames) {
+            let fName = divName.textContent.toLowerCase();
+            fName = fName.charAt(0).toUpperCase() + fName.slice(1)
+            console.log(fName)
+            let lastName = name.lName.charAt(0).toUpperCase() + name.lName.slice(1)
+            console.log(lastName)
+            let main = document.getElementsByTagName('main')[0]
+            main.innerHTML += "<br><div>" + fName + " " + lastName + "</div>"
+        }
+    </script>
+</main>
+</body>
+</html>

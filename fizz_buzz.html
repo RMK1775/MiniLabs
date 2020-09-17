@@ -6,6 +6,34 @@
 </head>
 <body>
 <script src="js/fizzbuzz.js"></script>
-<h3>Morning pushup Aug 25, 2020</h3>
+<h3>FizzBuzz</h3>
+
+<label for="usersChoice">How about?</label>
+<input id="usersChoice" name="usersChoice" type="text" placeholder="A number between 1 - 1000">
+<button type="submit" id="runIt">
+    <br>
+<div id="results"><h2>Results</h2></div>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script>
+    $('#submit').click(function(){
+        let choice = $('#usersChoice').val();
+        fizzBuzz(choice);
+    })
+
+    function fizzBuzz(num){
+        for(let i = 1; i <= num; i++){
+            if(i % 15 === 0){
+            $('#results').append('<div>Fizzbuzz</div>');
+                }else if(i % 3 === 0){
+                $('#results').append('<div>Fizz</div>')
+                }else if(i % 5 === 0){
+                $('#results').append('<div>Buzz</div>')
+            }else {
+                $('#results').append('<div>' + i +'</div>')
+            }
+        }
+    }
+</script>
 </body>
 </html>
