@@ -9,21 +9,79 @@
     <div>bob</div>
     <div>STEVE</div>
     <div>sAlLY</div>
+    <!--   My Solution (Vanilla JS) -->
     <script>
         let name = {lName: "smith"};
 
         const divNames = document.querySelectorAll('div');
-        console.log(divNames)
 
         for (const divName of divNames) {
             let fName = divName.textContent.toLowerCase();
             fName = fName.charAt(0).toUpperCase() + fName.slice(1)
-            console.log(fName)
+
             let lastName = name.lName.charAt(0).toUpperCase() + name.lName.slice(1)
-            console.log(lastName)
+
             let main = document.getElementsByTagName('main')[0]
             main.innerHTML += "<br><div>" + fName + " " + lastName + "</div>"
         }
+    </script>
+
+    <!-- Justin's Solution -->
+    <script>
+        "use strict";
+
+        let name = {lName: "smith"};
+        var divs = document.querySelectorAll('div');
+        // Or
+        // let divs = document.getElementsByTagName('div');
+
+        for(let i = 0; i<divs.length; i++){
+            //console.log(divs[i].innerText);
+            divs[i].innerText = setCase(divs[i].innerText) + " " + setCase(name.lName)
+        }
+
+        function setCase (str){
+            return str[0].toUpperCase() + str.substring(1).toLowerCase();
+        }
+    </script>
+
+    <!-- ES6 Solution -->
+    <script>
+        "use strict";
+
+        { // use of block scope instead of IIFE
+            const fullName = {lName: "smith"}; // use of const vs. var
+            const divs = document.querySelectorAll("div"); // jQuery like syntax
+            const convertCase = str => str[0].toUpperCase() + str.substring(1).toLowerCase(); // arrow functions
+            const convertNodes = ({ lName }, nodes) => { // object destructuring
+                for (let node of nodes) { // for...of loop
+                    node.innerText = `${convertCase(node.innerText)} ${convertCase(lName)}`; // template strings
+                }
+            }
+            convertNodes(fullName, divs);
+        }
+
+    </script>
+
+    <!-- Blossom's Solution -->
+    <script>
+        const name = {lName: "smith"};
+        const upperCase = (name) => name[0].toUpperCase().concat(name.slice(1).toLowerCase());
+
+        document.querySelectorAll('div').forEach((div) => {
+            return div.innerText = `${upperCase(div.textContent)} ${upperCase(name.lName)}`
+        })
+    </script>
+
+    <!-- Donelle's Solution -->
+    <script>
+    let last = {lName: "smith"};
+    var fName = document.querySelectorAll('div')
+
+    for (var i = 0; i < fName.length; i++){
+    console.log(fName[i].innerText.toLowerCase().charAt(0).toUpperCase() + fName[i].innerText.toLowerCase().slice(1) + ' ' + last.lName.charAt(0).toUpperCase() + last.lName.slice(1));
+    fName[i].innerText = fName[i].innerText.toLowerCase().charAt(0).toUpperCase() + fName[i].innerText.toLowerCase().slice(1) + ' ' + last.lName.charAt(0).toUpperCase() + last.lName.slice(1)
+    }
     </script>
 </main>
 </body>
