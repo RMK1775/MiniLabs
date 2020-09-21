@@ -13,3 +13,35 @@ var intervalId = setInterval(function () {
         console.log('Repeating this line ' + count);
     }
 }, interval);
+
+'use strict';
+// this code will produce a console log every second
+// when count >= max, the interval is cancelled, and the logging will stop
+var count = 0;
+var max = 10;
+var interval = 1000; // interval time in milliseconds
+var intervalId = setInterval(myFunc, interval);
+function myFunc() {
+    if (count >= max) {
+        clearInterval(intervalId);
+        console.log('All done');
+    } else {
+        count++;
+        console.log('Repeating this line ' + count);
+    }
+}
+
+<h1>This is a demo page</h1>
+<button type="button" onClick="reloadFromCache()">Refresh!</button>
+<button type="button" onClick="reloadFromServer()">Refresh!</button>
+<h2>Hi</h2>
+<script>
+    function reloadFromCache() {
+        location.reload(); // reload page, possibly from cache
+        alert("from cache, possibly")
+    }
+    function reloadFromServer() {
+        location.reload(true); // reload page from server
+        alert("from server")
+    }
+</script>
